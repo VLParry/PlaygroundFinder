@@ -1,6 +1,6 @@
 # Playground Finder
 
-## Learning Goals
+## Description
 
 - Build a web basic API with Sinatra and Active Record to support a React
   frontend
