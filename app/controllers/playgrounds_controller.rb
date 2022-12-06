@@ -1,21 +1,22 @@
 class PlaygroundsController < ApplicationController
     # returns all playgrounds
-    get "/playgrounds" do
-        Playground.all.to_json
-    end
+    # get "/playgrounds" do
+    #     Playground.all.to_json
+    # end
 
-    get "/playgrounds/:id" do
-        playground = Playground.find(params[:id])
-        playground.to_json
-    end
+    # get "/playgrounds/:id" do
+    #     playground = Playground.find(params[:id])
+    #     playground.to_json
+    # end
 
 
     post "/playgrounds" do
+        # binding.pry
         town = Town.find(params["town_id"])
-        playground = Playground.create(
+        playground = town.playgrounds.create(
             name: params[:name],
             address: params[:address],
-            town_id: town.id
+            # town_id: town.id
         )
         playground.to_json
     end
